@@ -8,7 +8,7 @@ import java.util.Set;
 public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long no;
+    private long id;
     private String name;
     private String addressLineOne;
     private String city;
@@ -38,12 +38,12 @@ public class Publisher {
         this.books = books;
     }
 
-    public long getNo() {
-        return no;
+    public long getId() {
+        return id;
     }
 
-    public void setNo(long no) {
-        this.no = no;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -93,18 +93,18 @@ public class Publisher {
 
         Publisher publisher = (Publisher) o;
 
-        return no == publisher.no;
+        return id == publisher.id;
     }
 
     @Override
     public int hashCode() {
-        return (int) (no ^ (no >>> 32));
+        return (int) (id ^ (id >>> 32));
     }
 
     @Override
     public String toString() {
         return "Publisher{" +
-                "no=" + no +
+                "no=" + id +
                 ", name='" + name + '\'' +
                 ", addressLineOne='" + addressLineOne + '\'' +
                 ", city='" + city + '\'' +

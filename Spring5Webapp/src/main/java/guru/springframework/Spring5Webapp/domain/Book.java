@@ -8,7 +8,7 @@ import java.util.Set;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
+    private long id;
 
     private String title;
     private String isbn;
@@ -36,11 +36,11 @@ public class Book {
     }
 
     public long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getTitle() {
@@ -70,7 +70,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "Id=" + Id +
+                "Id=" + id +
                 ", title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
                 ", authors=" + authors +
@@ -84,11 +84,11 @@ public class Book {
 
         Book book = (Book) o;
 
-        return Id == book.Id;
+        return id == book.id;
     }
 
     @Override
     public int hashCode() {
-        return (int) (Id ^ (Id >>> 32));
+        return (int) (id ^ (id >>> 32));
     }
 }
